@@ -1,0 +1,22 @@
+# Dockerfile.dev - basic dev image for a Create React App project
+FROM node:18-alpine
+
+WORKDIR /app
+
+# copy dependency manifests and install first to cache layers
+COPY package*.json ./
+RUN npm ci --silent
+
+# enable polling for file changes in mounted volumes (useful on Windows/WSL/Docker Desktop)
+# ENV CHOKIDAR_USEPOLLING=true
+ENV WATCHPACK_POLLING=true
+
+# ENV BROWSER=none
+# ENV PORT=3000
+
+# copy source
+COPY . .
+
+EXPOSE 3000
+
+CMD ["npm", "start"]
