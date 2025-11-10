@@ -15,9 +15,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React perfectly, I can do it!
-          Now with polling enabled, you can change code to easyly see my changes I mean it wil be reflrected without issues
-          Oh yeah, what happend now when i type with recommend VScode AI copilot?
+          Hello Reactjs
         </a>
       </header>
     </div>
